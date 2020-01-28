@@ -3,7 +3,7 @@ import { Text, Box, Flex } from "@chakra-ui/core";
 import Navbar from "../../Components/Navbar/Navbar";
 import QuizData from "../../api/QuizData";
 import "./Quiz.css";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class Quiz extends React.Component {
   constructor(props) {
@@ -43,6 +43,16 @@ class Quiz extends React.Component {
         wrongAnswerCount: this.state.wrongAnswerCount + 1
       });
     }
+  };
+
+  handleRoute = () => {
+    this.props.history.push({
+      pathname: "/assessment-result",
+      state: {
+        correctAnswerCount: this.state.correctAnswerCount,
+        wrongAnswerCount: this.state.wrongAnswerCount
+      }
+    });
   };
 
   render() {
@@ -89,19 +99,12 @@ class Quiz extends React.Component {
               );
             })}
             <Box m="auto" p={3} w="100%">
-              <Link
-                to={{
-                  pathname: `/assessment-result`,
-                  query: {
-                    correctAnswerCount: this.state.correctAnswerCount,
-                    wrongAnswerCount: this.state.wrongAnswerCount
-                  }
-                }}
+              <button
+                className="scheduleTest_button"
+                onClick={this.handleRoute}
               >
-                <button className="scheduleTest_button">
-                  Submit Your Test
-                </button>
-              </Link>
+                Submit Your Test
+              </button>
             </Box>
           </Flex>
         </Box>

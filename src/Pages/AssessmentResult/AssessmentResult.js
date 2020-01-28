@@ -3,6 +3,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { Text, Box, Flex } from "@chakra-ui/core";
 import { Subject } from "../../api/Data";
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from "victory";
+
 const AssessmentResult = props => {
   const [Day, setDay] = useState("");
   const chartData = [
@@ -23,12 +24,21 @@ const AssessmentResult = props => {
       <Box m={3}>
         <Text className="font-style">Assessment Result {Day}</Text>
         <Text className="font-style">
-          You Gave {this.props.value.location.query.correctAnswerCount} Correct
-          answers
-          <p>
-            You Gave {this.props.value.location.query.wrongAnswerCount} Wrong
-            answers
-          </p>
+          {props.location.state === undefined ? (
+            <p>Your assessment for Day {Day}</p>
+          ) : (
+            <p>
+              You Gave {props.location.state.correctAnswerCount} Correct answers
+            </p>
+          )}
+
+          {props.location.state === undefined ? (
+            <p>Your assessment for Day {Day}</p>
+          ) : (
+            <p>
+              You Gave {props.location.state.wrongAnswerCount} Wrong answers
+            </p>
+          )}
         </Text>
       </Box>
 
