@@ -22,6 +22,14 @@ const AssessmentResult = props => {
       <Navbar />
       <Box m={3}>
         <Text className="font-style">Assessment Result {Day}</Text>
+        <Text className="font-style">
+          You Gave {this.props.value.location.query.correctAnswerCount} Correct
+          answers
+          <p>
+            You Gave {this.props.value.location.query.wrongAnswerCount} Wrong
+            answers
+          </p>
+        </Text>
       </Box>
 
       <Flex direction="column" justify="center" align="center">

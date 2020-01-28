@@ -18,14 +18,18 @@ class Quiz extends React.Component {
     };
   }
 
-  handleAnswerSelect = (CorrectAnswer, clickedIndex) => {
-    let answeredIndex = clickedIndex + 1;
+  handleAnswerSelect = (CorrectAnswer, q_id, ans_id) => {
+    let answeredIndex = ans_id + 1;
 
-    document.getElementById(clickedIndex).style.backgroundColor = "#189144";
-    document.getElementById(clickedIndex).style.color = "white";
+    document.getElementById(
+      "question" + q_id + "_answer" + ans_id
+    ).style.backgroundColor = "#189144";
+    document.getElementById(
+      "question" + q_id + "_answer" + ans_id
+    ).style.color = "white";
 
     const { quizData } = this.state;
-    quizData[clickedIndex].answered = true;
+    quizData[q_id].answered = true;
     this.setState({
       quizData
     });
@@ -40,16 +44,6 @@ class Quiz extends React.Component {
       });
     }
   };
-
-  // handleroute = () => {
-  //   this.props.history.push({
-  //     pathname: "/assessment-result",
-  //     state: {
-  //       correctAnswerCount: this.state.correctAnswerCount,
-  //       wrongAnswerCountcolor: this.state.wrongAnswerCount
-  //     }
-  //   });
-  // };
 
   render() {
     return (
@@ -75,10 +69,14 @@ class Quiz extends React.Component {
                         <Box
                           my={3}
                           className="answers_box"
-                          id={AnswerIndex}
+                          id={"question" + index + "_answer" + AnswerIndex}
                           p={3}
                           onClick={() =>
-                            this.handleAnswerSelect(data.correct, index)
+                            this.handleAnswerSelect(
+                              data.correct,
+                              index,
+                              AnswerIndex
+                            )
                           }
                           key={AnswerIndex}
                         >
