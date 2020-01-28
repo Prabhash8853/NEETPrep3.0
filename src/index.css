@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.font-style {
+    font-family: 'Work Sans', sans-serif !important;
+}
+
+.flex-3 {
+    flex: 0.3
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.bd {
+    border: 1px solid green;
+}

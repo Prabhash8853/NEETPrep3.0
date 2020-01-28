@@ -1,0 +1,14 @@
+.dropdown {
+    width: 90%;
+    margin: auto;
+    background: none;
+    border-radius: 2px;
+    height: 40px;
+    outline: none;
+    padding: 10px;
+}
+
+.label {
+    color: #707070;
+    padding: 4px;
+}

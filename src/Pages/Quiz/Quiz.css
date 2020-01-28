@@ -1,0 +1,17 @@
+.no_hover:hover {
+    cursor: default !important;
+}
+
+.answers_box {
+    border: 1px solid #4e4e4e;
+    border-radius: 5px;
+}
+
+.answers_box:hover {
+    cursor: pointer;
+}
+
+.answered {
+    background-color: #189144;
+    color: white;
+}
