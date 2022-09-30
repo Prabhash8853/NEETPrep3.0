@@ -13,7 +13,7 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "emotion-theming": "^10.0.27",
-    "victory": "^34.0.1"
+    "victory": "^36.6.8"
   },
   "scripts": {
     "start": "react-scripts start",
